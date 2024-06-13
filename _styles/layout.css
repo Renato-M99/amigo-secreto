@@ -122,3 +122,15 @@ button{
     background-color: rgb(148, 145, 2);
     color:white;
 }
+
+/* Added */
+.added{
+    display: flex;
+    flex-wrap:wrap;
+    border: 2px solid orange;
+    width: 80%;
+    min-height: 5vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 8px;
+}
