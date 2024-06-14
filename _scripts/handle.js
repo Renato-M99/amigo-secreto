@@ -21,6 +21,8 @@ function addFriend(){
             } else {
                 p.innerHTML = `, ${addBtn}`;
             }
+           document.querySelector("input").value = '';
+            
         }
         else {
             alert("vazio!");
