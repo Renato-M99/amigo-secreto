@@ -35,3 +35,7 @@ function restartFriends(){
        
     });
 }
+
+function sortear(){
+
+}
