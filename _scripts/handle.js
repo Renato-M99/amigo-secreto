@@ -4,8 +4,7 @@ let friendCount = 0;
 
 
 addFriend(); // add button
-restartFriends();
-
+restartFriends(); //restart button
 
 function addFriend(){
     document.querySelector(".Adicionar").addEventListener('click', (event) => {
@@ -21,6 +20,7 @@ function addFriend(){
             } else {
                 p.innerHTML = `, ${addBtn}`;
             }
+
         }
         else {
             alert("vazio!");
@@ -30,4 +30,8 @@ function addFriend(){
     });
 }
 
-
+function restartFriends(){
+    document.querySelector(".Reiniciar").addEventListener('click', (event) => {
+       
+    });
+}
