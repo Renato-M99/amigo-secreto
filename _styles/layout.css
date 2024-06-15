@@ -10,11 +10,6 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-body{
-   
-}
-
-
 
 button{
     padding: .76rem;
@@ -66,6 +61,7 @@ button{
     margin: 2% auto;
     border-radius: 2em;
 }
+
 /* inSorteio (entrada) */
 .inSorteio label{
    
@@ -73,15 +69,24 @@ button{
     font-size: 18px;
 }
 /* outSorteio(saída) */
-
-.outSorteio label{
-    margin-top: -180px;
-    font-size: 2em;
-    font-weight: 400;
+.outSorteio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
 }
-#out{
-    min-height: 40vh;
-    width: 90%;
+.outSorteio h2{
+    margin-top: 1rem;
+    font-style: italic;
+   
+}
+.outSorteio div{
+    width: 60%;
+    margin: 2rem auto;
+    height: 60vh;
+    border: 2px solid orange;
+    padding-left: 1em;
+    border-radius: 1rem;
 }
 /* forms */
 .formSorteio{
@@ -119,7 +124,7 @@ button{
     background-color: rgb(217, 245, 176);
 }
 .Adicionar:hover, .Sortear:hover, .Reiniciar:hover{
-    background-color: rgb(148, 145, 2);
+    background-color: rgb(0, 0, 0);
     color:white;
 }
 
