@@ -1,5 +1,5 @@
 let addFriends = document.querySelector(".added");
-let addedFriends = Array.from(document.querySelectorAll("p"));
+let addedFriends =  Array.from(document.querySelectorAll("p"));
 let friendCount = 0;
 let span = document.querySelector("span");
 let retorno = Array.from(span);
@@ -18,6 +18,7 @@ function addFriend() {
 
         if (addBtn != '' && !addedFriends.includes(addBtn)) {
             friendCount++;
+            
             let p = document.createElement('p');
             addFriends.append(p);
 
@@ -30,7 +31,7 @@ function addFriend() {
             document.querySelector("input").value = '';
             error.textContent = '';
         }
-        else if (addedFriends.includes(addBtn)) {
+        else if(addedFriends.includes(addBtn)){
             span.append(error);
             error.innerHTML = "Já existe alguém com esse nome";
             error.style.color = "red";
@@ -43,7 +44,7 @@ function addFriend() {
             error.style.color = "red";
             error.style.textAlign = "center";
         }
-
+        
 
     });
 }

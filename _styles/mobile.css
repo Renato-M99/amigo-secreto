@@ -1,0 +1,25 @@
+@media (max-width: 480px){
+    .title i{
+        display: none;
+    }
+    .sorteio{
+        display: block;
+    }
+ 
+    label{
+        font-size: 20px;
+    }
+    span{
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+    }
+    .formSorteio input{
+        width: 102%;
+        margin: 0 auto;
+    }
+    .added{
+        width: 102%;
+        margin: 0 auto;
+    }
+}
