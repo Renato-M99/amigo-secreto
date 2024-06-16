@@ -21,7 +21,7 @@ function addFriend() {
             let p = document.createElement('p');
             addFriends.append(p);
 
-            if (friendCount == 1) {
+            if (friendCount ==1) {
                 p.innerHTML = `${addBtn}`;
             } else {
                 p.innerHTML = `, ${addBtn}`;
@@ -52,7 +52,18 @@ function addFriend() {
 
 
 function restartFriends() {
-    document.querySelector(".Reiniciar").addEventListener('click', () => {
+    document.querySelector(".Reiniciar").addEventListener('click', (event) => {
+        event.preventDefault();
+         while(addedFriends.length != 0){
+            addedFriends.pop();
+         }
+                
+               
+
+         friendCount = 0;
+        document.querySelector(".added").innerHTML = '';
+        document.querySelector("input").value = '';
+        error.textContent = '';
         
        
     });
