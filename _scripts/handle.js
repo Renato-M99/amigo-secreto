@@ -4,6 +4,7 @@ let friendCount = 0;
 let span = document.querySelector("span");
 let retorno = Array.from(span);
 let error = document.createElement('p');
+let prize = document.querySelector('.addedOut');
 
 
 addFriend(); // add button
@@ -54,6 +55,7 @@ function clearAll() {
     //limpa todos os campos e a contagem de amigos
     friendCount = 0;
     document.querySelector(".added").innerHTML = '';
+    document.querySelector(".addedOut").innerHTML = '';
     document.querySelector("input").value = '';
     error.textContent = '';
 }
@@ -67,6 +69,7 @@ function restartFriends() {
         event.preventDefault();
         while (addedFriends.length != 0) {
             addedFriends.pop();
+            prize.pop();
         }
 
         clearAll();
@@ -77,23 +80,54 @@ function restartFriends() {
 }
 
 function executePrize(addedFriends) {
-    document.querySelector(".Sortear").addEventListener(".click", (event) => {
+    document.querySelector(".Sortear").addEventListener("click", (event) => {
         event.preventDefault();
-        addedFriends = this.addedFriends;
-        randomFriends(addedFriends);
-      
+
+        if (addedFriends.length >= 4) {
+
+            const prizeResult = Array.from(randomFriends(addedFriends));
+
+            error.textContent = '';
+            let index = 0;
+
+            while (index < prizeResult.length) {
+                index++;
+                let friendNext = index + 1;
+                if(index >= prizeResult.length - 1){
+                    friendNext = 0;
+                }
+
+                let resultItem = document.createElement('p');
+                prize.append(resultItem);
+
+                resultItem.textContent = `${prizeResult[index]} => ${prizeResult[friendNext]}`;
+
+
+            }
+
+            /*  resultItem.style.display = "block"; */
+
+        }
+
+        else {
+            span.append(error);
+            error.innerHTML = "Você precisa ter pelo menos 4 pessoas adicionadas.";
+            error.style.color = "red";
+            error.style.textAlign = "center";
+        }
+
     })
 }
 
-function randomFriends(arr) {
+function randomFriends(addedFriends) {
     // Loop em todos os elementos
-    for (let i = arr.length - 1; i > 0; i--) {
+    for (let i = addedFriends.length - 1; i > 0; i--) {
         // Escolhendo elemento aleatório
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(Math.random() * (i));
         // Reposicionando elemento
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+        [addedFriends[i], addedFriends[j]] = [addedFriends[j], addedFriends[i]];
     }
     // Retornando array com aleatoriedade
-    return arr;
+    return addedFriends;
 }
 

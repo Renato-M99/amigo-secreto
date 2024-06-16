@@ -135,6 +135,7 @@ button{
 /* addedOut */
 .addedOut{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     border: 2px solid orange;
     width: 100%;
