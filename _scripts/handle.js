@@ -21,7 +21,7 @@ function addFriend() {
             let p = document.createElement('p');
             addFriends.append(p);
 
-            if (friendCount ==1) {
+            if (friendCount == 1) {
                 p.innerHTML = `${addBtn}`;
             } else {
                 p.innerHTML = `, ${addBtn}`;
@@ -50,22 +50,28 @@ function addFriend() {
 
 
 
+function clearAll(){
+    //limpa todos os campos e a contagem de amigos
+    friendCount = 0;
+    document.querySelector(".added").innerHTML = '';
+    document.querySelector("input").value = '';
+    error.textContent = '';
+}
+
+
+
 
 function restartFriends() {
+    //Reiniciar o sorteio: apaga todos os elementos do array e usa a função clear all para limpar os campos.
     document.querySelector(".Reiniciar").addEventListener('click', (event) => {
         event.preventDefault();
-         while(addedFriends.length != 0){
+        while (addedFriends.length != 0) {
             addedFriends.pop();
-         }
-                
-               
+        }
 
-         friendCount = 0;
-        document.querySelector(".added").innerHTML = '';
-        document.querySelector("input").value = '';
-        error.textContent = '';
-        
-       
+       clearAll();
+
+
     });
- 
+
 }
