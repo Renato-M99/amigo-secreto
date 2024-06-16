@@ -45,7 +45,7 @@ button{
     font-size: 2.5em;
 }
 
-/* div pai das duas forms */
+/* div pai das duas divs */
 .sorteio{
     display: flex;
     justify-content: space-around;
@@ -68,21 +68,17 @@ button{
 }
 /* inSorteio (entrada) */
 .inSorteio label{
-   
     font-style: italic;
     font-size: 18px;
 }
 /* outSorteio(saída) */
 
-.outSorteio label{
-    margin-top: -180px;
-    font-size: 2em;
-    font-weight: 400;
+.outSorteio h2{
+    color: red;
+    font-size: 1.6em;
+    font-style: italic;
 }
-#out{
-    min-height: 40vh;
-    width: 90%;
-}
+
 /* forms */
 .formSorteio{
     display: flex;
@@ -96,6 +92,7 @@ button{
 
 }
 .formSorteio label{
+    color: red;
     text-align: center;
     font-weight: bold;
     
@@ -123,7 +120,7 @@ button{
     color:white;
 }
 
-/* Added */
+/* Added div  */
 .added{
     display: flex;
     flex-wrap:wrap;
@@ -134,3 +131,16 @@ button{
     font-weight: bold;
     padding-left: 8px;
 }
+
+/* addedOut */
+.addedOut{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid orange;
+    width: 100%;
+    min-height: 50vh;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
